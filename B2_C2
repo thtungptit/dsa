@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int ccd(int n){
+	while(n > 9) {
+		n /= 10;
+	}
+	return n;
+}
+
+int main(){
+	int t; cin >> t;
+	while(t--) {
+		int n; cin >> n;
+		int b = n % 10;
+		int a = ccd(n);
+		if(a == b) cout << "YES" << endl;
+		else cout << "NO" << endl;
+	}
+}
