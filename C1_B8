@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string chho(string a){
+	for(int i = 0; i < a.size(); i++){
+		a[i] = toupper(a[i]);
+	}
+	return a;
+}
+
+string chten(string a){
+	a[0] = toupper(a[0]);
+	for(int i = 1; i < a.size(); i++) {
+		a[i] = tolower(a[i]);
+	}
+	return a;
+}
+
+int main(){
+	int t; cin >> t;
+	while(t--) {
+		string a;
+		getline(cin >> ws, a);
+		string word;
+		stringstream ss(a);
+		string v[50];
+		int x = 0;
+		while(ss >> word){
+			v[x++] = word;
+		}
+		v[0] = chho(v[0]);
+		for(int i = 1; i < x - 1; i++) {
+			v[i] = chten(v[i]);
+			cout << v[i] << " ";
+		}
+		v[x - 1] = chten(v[x - 1]);
+		cout << v[x - 1] << ", " << v[0] << endl;
+	}
+}
